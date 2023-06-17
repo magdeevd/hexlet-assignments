@@ -6,7 +6,7 @@ require_relative '../lib/stack'
 class StackTest < Minitest::Test
   # BEGIN
   def test_push_and_pop
-    stack = Stack::new([1, 'c', 1.5, '!'])
+    stack = Stack.new([1, 'c', 1.5, '!'])
 
     stack.push! 'test'
 
@@ -15,11 +15,11 @@ class StackTest < Minitest::Test
     result = stack.pop!
 
     assert { result == 'test' }
-    assert { stack.size == 4}
+    assert { stack.size == 4 }
   end
 
   def test_pop_from_empty_stack
-    stack = Stack::new
+    stack = Stack.new
 
     result = stack.pop!
 
@@ -28,7 +28,7 @@ class StackTest < Minitest::Test
   end
 
   def test_is_empty
-    stack = Stack::new
+    stack = Stack.new([1, 2])
 
     refute { stack.empty? }
 
@@ -38,18 +38,19 @@ class StackTest < Minitest::Test
   end
 
   def test_clear
-    stack = Stack::new([1, 2, 3])
+    stack = Stack.new([1, 2, 3])
     stack.clear!
 
     assert { stack.empty? }
   end
 
   def test_clear_empty_stack
-    stack = Stack::new
+    stack = Stack.new
     stack.clear!
 
     assert { stack.empty? }
   end
+
   # END
 end
 
