@@ -4,7 +4,6 @@
 require 'date'
 
 module Model
-
   def self.included(base)
     base.extend(ClassMethods)
   end
@@ -38,7 +37,6 @@ module Model
       end
     end
   end
-
 end
 
 # END
