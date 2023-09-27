@@ -1,0 +1,7 @@
+<h1>Tasks</h1>
+
+<% @tasks.each do |task| %>
+  <p><%= link_to task.name, task_path(task) %></p>
+  <small><%= task.creator %>, <%= task.created_at %></small>
+  <hr>
+<% end %>
