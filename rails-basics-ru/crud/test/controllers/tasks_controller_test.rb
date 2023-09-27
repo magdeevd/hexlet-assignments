@@ -1,4 +1,6 @@
-require "test_helper"
+# frozen_string_literal: true
+
+require 'test_helper'
 
 class TasksControllerTest < ActionDispatch::IntegrationTest
   setup do
@@ -53,6 +55,4 @@ class TasksControllerTest < ActionDispatch::IntegrationTest
     assert { !Task.find_by(@attrs) }
     assert_response :redirect
   end
-
-  private
 end
