@@ -1,0 +1,11 @@
+h1
+  = @task.name
+p
+  = @task.description
+small
+  | Creator: #{@task.creator}
+  i< = @task.created_at.in_time_zone('Moscow').strftime('%H:%m %d.%m.%y')
+hr
+= link_to 'Back', tasks_path
+= link_to 'Edit', edit_task_path(@task)
+= link_to 'Delete', task_path(@task), data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'}
